@@ -17,5 +17,12 @@ MESSAGE(STATUS "VERSION: ${DMDETOURS_VERSION}")
 
 OPTION(USE_DMDETOURS "use dmdetours" OFF)
 
+#add_definitions(-DUNICODE -D_UNICODE)
+
 LibImport("dmdetours" "src/dmdetours")
+
+set_property (
+    SOURCE src/dmdetours/uimports.cpp
+    APPEND PROPERTY HEADER_FILE_ONLY true)
+
 ExeImport("samples" "dmdetours")
