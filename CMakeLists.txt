@@ -17,11 +17,15 @@ MESSAGE(STATUS "VERSION: ${DMDETOURS_VERSION}")
 
 OPTION(USE_DMDETOURS "use dmdetours" OFF)
 
+if(WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
 #add_definitions(-DUNICODE -D_UNICODE)
 add_definitions(-DDETOURS_TARGET_PROCESSOR=X64)
 add_definitions(-DDETOURS_64BIT)
 
-LibImport("dmdetours" "src/dmdetours")
+DllImport("dmdetours" "src/dmdetours")
 
 set_property (
     SOURCE src/dmdetours/uimports.cpp
