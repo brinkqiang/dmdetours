@@ -17,6 +17,7 @@
 #include <detours.h>
 #pragma warning(disable:4091) // empty typedef
 #include <imagehlp.h>
+#pragma comment(lib, "imagehlp.lib")
 #pragma warning(pop)
 
 ////////////////////////////////////////////////////////////// Error Messages.
