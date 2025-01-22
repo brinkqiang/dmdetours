@@ -21,7 +21,7 @@ OPTION(USE_DMDETOURS "use dmdetours" OFF)
 add_definitions(-DDETOURS_TARGET_PROCESSOR=X64)
 add_definitions(-DDETOURS_64BIT)
 
-DllImport("dmdetours" "src/dmdetours")
+LibImport("dmdetours" "src/dmdetours")
 
 set_property (
     SOURCE src/dmdetours/uimports.cpp
